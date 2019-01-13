@@ -14,7 +14,6 @@ def Introduction():
     #Use index for ability score array. Str, Dex, Con, Int, Wis, Cha. Dictionary by Undermybrella to add clarity for users
     ability_scores = {"str":8, "dex":18, "con":12, "int":10, "wis":14, "cha":14}
     #Introduction
-    print("Welcome to Crispybro's D20 Program! Assistance provided by /u/UndermyBrella")
     print("What ability will you be using?")
     #User chooses which ability the action will require
     answer_ability = input("Str, Dex, Con, Int, Wis, or Cha?").lower()
@@ -81,6 +80,7 @@ def Doubles():
         #Lets them roll another d20
         Random_Roll()
         Prof_Plus_Bonuses()
+        Restart()
     elif reroll == "no" or reroll == "n":
         #Moves to the possibly last step.
         print("Okay...")
@@ -95,7 +95,7 @@ def Restart():
     restart = input("Yes or No.").lower()
     if restart == "yes" or restart == "y":
         #Takes them back to the beginning
-        Program()
+        Introduction()
     elif restart == "no" or restart == "n":
         #Steers them towards the exit
         print("Okay...")
@@ -115,6 +115,7 @@ def Crits():
         
 #Down the rabbit hole
 def Program():    
+    print("Welcome to Crispybro's D20 Program! Assistance provided by /u/UndermyBrella")
     Introduction()
     Random_Roll()
     Prof_Plus_Bonuses()
